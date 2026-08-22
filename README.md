@@ -26,34 +26,29 @@ El proyecto combina una interfaz atractiva con un sistema funcional para gestion
 
 ## 📸 Showcase
 
-### 🏠 Página principal
+
+
 
 <p align="center">
-  <img src="IMAGENES/README/inicio.png" width="850">
+  <img src="Capturas/Home-Dulce-Fantasia.png" width="850">
 </p>
 
-### 🧁 Catálogo de productos
+
 
 <p align="center">
-  <img src="IMAGENES/README/productos.png" width="850">
+  <img src="Capturas/log-in-dulce-fantasia.png" width="850">
 </p>
 
-### 🛒 Carrito de compras
+
 
 <p align="center">
-  <img src="IMAGENES/README/carrito.png" width="850">
+  <img src="Capturas/pago-dulce-fantasia.png" width="850">
 </p>
 
-### 🔐 Inicio de sesión
+
 
 <p align="center">
-  <img src="IMAGENES/README/login.png" width="850">
-</p>
-
-### 💌 Contacto
-
-<p align="center">
-  <img src="IMAGENES/README/contacto.png" width="850">
+  <img src="Capturas/sign-up-dulce-fantasia.png" width="850">
 </p>
 
 ---
