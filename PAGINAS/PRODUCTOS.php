@@ -111,7 +111,7 @@ if (
                     Inicio
                 </a>
 
-                <a href="../PAGINAS/NUESTRA EMPRESA.HTML">
+                <a href="../PAGINAS/NUESTRA EMPRESA.html">
                     Nuestra Empresa
                 </a>
 
