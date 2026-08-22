@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Liquidación de Nómina</title>
+<link rel="stylesheet" href="../../CSS/LIQUIDACION.CSS">
+</head>
+<body>
+  <div class="card">
+    <h2>Liquidador de Nómina</h2>
+
+    <label>Salario mensual (COP)</label>
+    <input type="number" id="salario" placeholder="Ej: 1200000">
+
+    <label>Días laborados</label>
+    <input type="number" id="dias" placeholder="Ej: 30">
+
+    <label>Horas extras diurnas</label>
+    <input type="number" id="hed" value="0" min="0">
+
+    <label>Horas extras nocturnas</label>
+    <input type="number" id="hen" value="0" min="0">
+    
+        <label>Horas extras nocturnas festivas</label>
+    <input type="number" id="henf" value="0" min="0">
+
+            <label>Horas extras diurnas festivas</label>
+    <input type="number" id="hedf" value="0" min="0">
+
+    <button onclick="liquidar()">Calcular liquidación</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    const SMMLV = 1423500;
+    const SUB_TRANSPORTE = 200000;
+function liquidar() 
+{
+  const salario = parseFloat(document.getElementById('salario').value) || 0;
+  const dias = parseFloat(document.getElementById('dias').value) || 0;
+  const hed = parseFloat(document.getElementById('hed').value) || 0;
+  const hen = parseFloat(document.getElementById('hen').value) || 0;
+    const henf = parseFloat(document.getElementById('henf').value) || 0;
+    const hedf = parseFloat(document.getElementById('hedf').value) || 0;
+
+
+  if (salario <= 0 || dias <= 0) {
+    document.getElementById('resultado').textContent = "Ingrese salario y días válidos.";
+    return;
+  }
+
+  const valorDia = salario / 30;
+  const salarioBasico = valorDia * dias;
+
+
+  const subsidio = (salario <= 2 * SMMLV) ? SUB_TRANSPORTE * (dias / 30) : 0;
+
+  const valorHora = salario / 240;
+  const pagoHED = hed * valorHora * 1.25;
+  const pagoHEN = hen * valorHora * 1.75;
+    const pagoHENf = henf * valorHora * 2.5;
+    const pagoHEDf = hedf * valorHora * 2;      
+
+
+  const devengado = salarioBasico + subsidio + pagoHED + pagoHEN + pagoHENf + pagoHEDf;
+
+
+const eps = (devengado - subsidio) * 0.04;
+const pension = (devengado - subsidio) * 0.04;
+const fondoSolid = (salario >= 4 * SMMLV) ? devengado * 0.01 : 0;
+
+const totalDeducciones = eps + pension + fondoSolid;
+const netoPagar = devengado - totalDeducciones;
+
+document.getElementById('resultado').innerHTML = `
+  Detalle de liquidación:<br>
+  Salario básico: $${salarioBasico.toLocaleString('es-CO')}<br>
+  Subsidio transporte: $${subsidio.toLocaleString('es-CO')}<br>
+  Horas extras diurnas: $${pagoHED.toLocaleString('es-CO')}<br>
+  Horas extras nocturnas: $${pagoHEN.toLocaleString('es-CO')}<br>
+    Horas extras nocturnas festivas: $${pagoHENf.toLocaleString('es-CO')}<br>
+    Horas extras diurnas festivas: $${pagoHEDf.toLocaleString('es-CO')}<br>
+  Total devengado: $${devengado.toLocaleString('es-CO')}<br>
+  EPS (4%): $${eps.toLocaleString('es-CO')}<br>
+  Pensión (4%): $${pension.toLocaleString('es-CO')}<br>
+  Fondo solidario (1%): $${fondoSolid.toLocaleString('es-CO')}<br><br>
+  <strong>NETO A PAGAR: $${netoPagar.toLocaleString('es-CO')}</strong>
+`;
+
+}
+
+  </script>
+</body>
+</html>

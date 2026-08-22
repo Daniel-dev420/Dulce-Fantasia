@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* ================== BODY ================== */
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: "Poppins", sans-serif;
+  color: #5C4033; /* cocoa */
+  text-align: center;
+  background: url('../IMAGENES/Berries and Cream Filled Croissants.jpeg') no-repeat center center/cover;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ================== OVERLAY ================== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.575); /* overlay blanco semitransparente */
+  z-index: -1;
+}
+
+/* ================== CARD ================== */
+.card {
+  background-color: #ffeefc; /* rosa muy suave */
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 1;
+}
+
+/* ================== TITULO ================== */
+.card h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #5C4033; /* cocoa */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+  font-weight: 700;
+}
+
+/* ================== INPUTS ================== */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #5C4033;
+}
+
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #f386b4; /* rosa */
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #5C4033;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #faaff4; /* rosa fuerte */
+  box-shadow: 0 0 6px rgba(243,134,180,0.4);
+}
+
+/* ================== BOTÓN ================== */
+button {
+  font-size: 16px;
+  background-color: #f5f2d1; /* crema claro */
+  color: #5C4033;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+button:hover {
+  background-color: #5C4033; /* rosa fuerte */
+  color: #f5f2d1;
+  transform: scale(1.05);
+}
+
+/* ================== RESULTADO ================== */
+#resultado {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #5C4033;
+  line-height: 1.6;
+  text-align: left;
+  background-color: #fff0f8; /* rosa muy suave */
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h2 {
+    font-size: 24px;
+  }
+
+  input[type="number"], input[type="date"], button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  #resultado {
+    font-size: 16px;
+  }
+}

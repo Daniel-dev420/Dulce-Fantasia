@@ -1,0 +1,55 @@
+body {
+  background: linear-gradient(to right, #faaff4, #ffc9d6); /* degradado rosa */
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  color: #5C4033; /* marrón suave */
+}
+
+h1 {
+  font-size: 60px;
+  text-shadow: 2px 2px 10px #ffc9d6; /* sombra rosa pastel */
+  color: #f386b4; /* rosa fuerte */
+}
+
+.boton,
+button {
+  font-size: 16px;
+  background: linear-gradient(to right, #f386b4, #ffc9d6); /* degradado rosa */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.boton-comprar {
+  height: 45px;
+  padding: 12px 20px;
+}
+
+.boton:hover,
+button:hover {
+  background: #fff3fc; /* blanco rosado */
+  color: #5C4033; /* marrón */
+  transform: scale(1.08);
+}
+
+img {
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+li {
+  list-style: none;
+  font-size: 18px;
+  padding: 5px 0;
+}

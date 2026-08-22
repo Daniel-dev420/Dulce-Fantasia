@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ================== BODY ================== */
+body { 
+  padding: 20px; 
+  background: #fce9ff;
+  color: #3e2c23; /* cocoa profundo */
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ================== TITULOS ================== */
+h1, h2 {
+  color: #3e2c23; /* cocoa oscuro elegante */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* ================== TABLA ================== */
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  margin-top: 20px; 
+  background-color: #ffffff; /* blanco puro */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+thead th {
+  background-color: #faafcb; /* rosa moderno suave */
+  color: #ffffff; 
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+th, td { 
+  padding: 12px; 
+  border: 1px solid #ffc9d6; /* borde rosa pastel */
+  text-align: center; 
+  font-size: 16px;
+  color: #3e2c23; /* cocoa */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ffe2f5; /* fila alterna rosa suave */
+}
+
+/* ================== BOTONES ================== */
+.boton, button {
+  background-color: #f5f2d1; /* crema claro */
+  border-radius: 25px;
+  margin: 20px 10px 0;
+  padding: 12px 20px;
+  color: #3e2c23; /* cocoa */
+  border: 1px solid #e3dbc0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  display: inline-block;
+    text-decoration: none;
+}
+
+
+.boton:hover, button:hover {
+  background-color: #3e2c23; /* cocoa */
+  color: #f5f2d1; /* crema */
+  transform: scale(1.05);
+}
+
+/* ================== ENLACES DENTRO DE BOTONES ================== */
+button a, .boton a {
+  background-color: #f5f2d1; /* crema */
+  border-radius: 25px;
+  padding: 10px 16px;
+  color: #3e2c23; /* cocoa */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+button a:hover, .boton a:hover {
+  background-color: #3e2c23; /* cocoa */
+  color: #f5f2d1; /* crema */
+}
+
+/* ================== IMÁGENES ================== */
+img {
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  max-width: 100px;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  table, th, td {
+    font-size: 14px;
+  }
+
+  .boton, button {
+    width: 100%;
+    margin-top: 15px;
+  }
+}

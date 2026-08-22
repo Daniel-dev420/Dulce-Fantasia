@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prestaciones Sociales</title>
+<link rel="stylesheet" href="../../CSS/LIQUIDACION2.CSS">
+</head>
+<body>
+  <div class="card">
+    <h2>Prestaciones Sociales</h2>
+
+    <label>Salario mensual (COP)</label>
+    <input type="number" id="salario" placeholder="Ej: 1200000">
+
+    <label>Fecha de ingreso</label>
+    <input type="date" id="fechaIngreso">
+
+    <label>Fecha de salida</label>
+    <input type="date" id="fechaSalida">
+
+    <button onclick="calcular()">Calcular</button>
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function calcular() {
+      const salario = parseFloat(document.getElementById('salario').value) || 0;
+      const ingreso = new Date(document.getElementById('fechaIngreso').value);
+      const salida = new Date(document.getElementById('fechaSalida').value);
+
+      if (!salario || isNaN(ingreso) || isNaN(salida) || salida <= ingreso) {
+        document.getElementById('resultado').textContent = 'Por favor ingrese datos válidos.';
+        return;
+      }
+
+      const diferencia = Math.floor((salida - ingreso) / (1000 * 60 * 60 * 24)); // días laborados
+      const dias = diferencia;
+
+      const cesantias = (salario * dias) / 360;
+      const interesesCesantias = cesantias * 0.12;
+      const prima = (salario * dias) / 360;
+      const vacaciones = (salario * dias) / 720;
+
+      document.getElementById('resultado').innerHTML = `
+Días laborados: ${dias}
+Cesantías: $${cesantias.toLocaleString('es-CO')}
+Intereses sobre cesantías (12%): $${interesesCesantias.toLocaleString('es-CO')}
+Prima de servicios: $${prima.toLocaleString('es-CO')}
+Vacaciones: $${vacaciones.toLocaleString('es-CO')}
+      `;
+    }
+  </script>
+</body>
+</html>

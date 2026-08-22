@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Parafiscales</title>
+<link rel="stylesheet" href="../../CSS/LIQUIDACION.CSS">
+</head>
+<body>
+  <div class="card">
+    <h2>Cálculo Parafiscales</h2>
+    <label>Total Nómina (COP)</label>
+    <input type="number" id="nomina" placeholder="Ej: 10000000">
+
+    <button onclick="calcular()">Calcular</button>
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function calcular() {
+      const nomina = parseFloat(document.getElementById('nomina').value) || 0;
+
+      const sena = nomina * 0.02;
+      const icbf = nomina * 0.03;
+      const cajaCompensacion = nomina * 0.04;
+
+      document.getElementById('resultado').innerHTML = `
+SENA (2%): $${sena.toLocaleString('es-CO')}
+ICBF (3%): $${icbf.toLocaleString('es-CO')}
+Caja de Compensación (4%): $${cajaCompensacion.toLocaleString('es-CO')}
+Total Parafiscales: $${(sena + icbf + cajaCompensacion).toLocaleString('es-CO')}
+      `;
+    }
+  </script>
+</body>
+</html>

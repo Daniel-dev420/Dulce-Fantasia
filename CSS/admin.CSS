@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/* ================== TIPOGRAFÍA ================== */
+body {
+  margin: 20px;
+  background: #fce9ff;
+  background-attachment: fixed;
+  color: #3e2c23; /* cocoa más profundo para mejor contraste */
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ================== TITULOS ================== */
+h1 {
+  color: #3e2c23; /* cocoa oscuro elegante */
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+/* ================== BOTONES PRINCIPALES ================== */
+a.btn, button, .boton {
+  font-size: 16px;
+  background-color: #f5f2d1; /* crema claro */
+  color: #3e2c23; /* cocoa */
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 10px 16px;
+  border: 1px solid #e3dbc0;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border: none;
+}
+
+a.btn:hover, button:hover, .boton:hover {
+  background-color: #3e2c23; /* cocoa */
+  color: #f5f2d1; /* crema */
+  transform: scale(1.05);
+}
+
+/* ================== TABLAS ================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background-color: #ffffff; /* blanco puro */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+th, td { 
+  padding: 12px; 
+  border: 1px solid #ffc9d6; /* rosa pastel */
+  text-align: center; 
+  font-size: 16px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ffe2f5; /* fila alterna rosa suave */
+}
+th {
+  background-color: #faafcb; /* rosa moderno más suave */
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ================== BOTONES DE ACCIONES ================== */
+.acciones a {
+  padding: 8px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  margin-right: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.233);
+    border: none;
+      transform: scale(1.05);
+}
+
+/* Botones de editar */
+.editar {
+  background-color: #07daff; /* azul moderno */
+}
+.editar:hover {
+  background-color: #00bcd4;
+}
+
+/* Botones de eliminar */
+.eliminar {
+  background-color: #dc3545; /* rojo */
+}
+.eliminar:hover {
+  background-color: #a71d2a;
+}
+
+/* ================== IMÁGENES ================== */
+img {
+  max-width: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  table, th, td {
+    font-size: 14px;
+  }
+
+  a.btn, button, .boton {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .acciones a {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
