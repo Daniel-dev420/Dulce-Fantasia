@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contáctenos</title>
+
+  <link rel="stylesheet" href="../CSS/CONTACTANOS.CSS"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Gruppo&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+  <header class="sticky top-0 bg-pink-100 shadow-md z-50">
+    <nav>
+      <div class="logo">
+        <img src="../IMAGENES/logo-modified-removebg-preview-removebg-preview.png" alt="Logo Dulce Fantasía">
+              <span class="nombre">Dulce Fantasía</span>
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="../index.html">Inicio</a>
+          <a href="../PAGINAS/NUESTRA EMPRESA.html">Nuestra Empresa</a>
+          <a href="../PAGINAS/PRODUCTOS.php">Productos</a>
+          <a href="../PAGINAS/CONTACTENOS.html">Contáctenos</a>
+          <a href="../PAGINAS/INICIO DE SESION.php">Inicio de Sesión</a>
+          <a href="../PAGINAS/SERVICIOS.HTML">Servicios</a>
+          <a href="../PAGINAS/REGISTRARSE.php">Registrarse</a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61568157712218&mibextid=ZbWKwL" target="_blank">
+            <img src="../IMAGENES/FACEBOOK.png" alt="Facebook" class="icon">
+          </a>
+          <a href="https://www.instagram.com/dulcefantasia134/" target="_blank">
+            <img src="../IMAGENES/instagram.jpg" alt="Instagram" class="icon">
+          </a>
+          <a href="https://wa.me/573219740048" target="_blank">
+            <img src="../IMAGENES/whatsapp.png" alt="WhatsApp" class="icon">
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+<form id="formContacto" method="post" action="../PHP/php.php">
+
+    <label>Nombre Completo</label>
+    <input type="text" name="Nombre" required>
+
+    <label>Correo Electrónico</label>
+    <input type="email" name="Email" required>
+
+    <label>Teléfono</label>
+    <input type="tel" name="Telefono" required>
+
+    <label>Mensaje</label>
+    <textarea name="Mensaje" rows="5" required></textarea>
+
+    <input type="submit" value="Enviar Mensaje">
+    <input type="reset" value="Borrar Datos">
+
+</form>
+
+<div id="mensajeContacto"></div>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Pastelería Dulce Fantasía. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+document.getElementById("formContacto").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const formulario = this;
+    const mensaje = document.getElementById("mensajeContacto");
+
+    const datos = new FormData(formulario);
+
+    try {
+
+        const respuesta = await fetch("../PHP/php.php", {
+            method: "POST",
+            body: datos
+        });
+
+        const resultado = await respuesta.json();
+
+        mensaje.textContent = resultado.message;
+
+        if (resultado.success) {
+            mensaje.className = "mensaje-exito";
+            formulario.reset();
+        } else {
+            mensaje.className = "mensaje-error";
+        }
+
+    } catch (error) {
+
+        mensaje.textContent = "Ocurrió un error al enviar el mensaje.";
+        mensaje.className = "mensaje-error";
+
+    }
+
+});
+</script>
+</body>
+</html>
