@@ -1,429 +1,1229 @@
-/* ================== TIPOGRAFÍA ================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/* =========================================================
+   DULCE FANTASÍA — E-COMMERCE PREMIUM
+   Diseño responsive
+========================================================= */
+
+/* =========================
+   FUENTES
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --rosa: #f8dce7;
+    --rosa-claro: #fff5f8;
+    --rosa-fondo: #fff9fb;
+
+    --crema: #fffaf3;
+    --crema-2: #f6eadb;
+
+    --chocolate: #4b3027;
+    --chocolate-claro: #6d4b3f;
+
+    --dorado: #c99b55;
+    --dorado-claro: #ead3a8;
+
+    --blanco: #ffffff;
+    --negro: #241b18;
+
+    --sombra: 0 10px 35px rgba(75, 48, 39, 0.08);
+    --sombra-hover: 0 18px 45px rgba(75, 48, 39, 0.14);
+
+    --radio: 18px;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-  background: linear-gradient(to right, #faaff4, #ffc9d6);
-  margin: 0;
-  color: #5C4033;
-  font-size: 18px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  text-align: center;
+    margin: 0;
+    background: var(--rosa-fondo);
+    color: var(--chocolate);
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================
+   TIPOGRAFÍA
+========================= */
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--chocolate);
+    line-height: 1.15;
 }
 
 h1 {
-  font-size: 60px;
-  font-weight: 600;
-  color: #5C4033;
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    font-weight: 600;
 }
 
 h2 {
-  font-size: 50px;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #5C4033;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
 }
 
 h3 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #5C4033;
+    font-size: 1.45rem;
+    font-weight: 600;
 }
 
 p {
-  font-size: 20px;
-  line-height: 1.6;
-  color: #5C4033;
+    color: var(--chocolate-claro);
 }
 
-/* ================== HEADER ================== */
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 nav {
-  background-color: #ffffff;
-  max-width: 1900px;
-  margin: 0 auto;
-  padding: 1rem 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 100%;
+    min-height: 82px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    position: relative;
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(75, 48, 39, 0.07);
+
+    box-shadow: 0 4px 20px rgba(75, 48, 39, 0.04);
+
+    backdrop-filter: blur(12px);
 }
+
+
+/* =========================
+   LOGO
+========================= */
 
 .logo {
-  display: flex;
-  align-items: center;  /* alinea logo + texto al centro */
-  gap: 0.8rem;          /* espacio entre el icono y el texto */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    flex-shrink: 0;
 }
 
 .logo img {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
+    width: 52px;
+    height: 52px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--dorado-claro);
 }
 
 .logo-text {
-  font-size: 22px;
-  font-weight: bold;
-  color: #5C4033;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+
+    color: var(--chocolate);
 }
 
 
+/* =========================
+   NAV RIGHT
+========================= */
+
 .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 35px;
 }
 
 .nav-links {
-  display: flex;
-  gap: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .nav-links a {
-  color: #5C4033;
-  text-decoration: none;
-  font-size: 1.1rem;
-  padding: 10px 18px;
-  border-radius: 25px;
-  transition: all 0.3s ease;
+    position: relative;
+
+    padding: 9px 15px;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    color: var(--chocolate);
+
+    border-radius: 30px;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
 }
 
 .nav-links a:hover {
-  background-color: rgb(245, 242, 209);
-  color: #5C4033;
-  transform: scale(1.1);
+    color: var(--dorado);
+    background: var(--rosa-claro);
 }
 
+
+/* =========================
+   SOCIAL
+========================= */
+
 .social-links {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .social-links .icon {
-  width: 32px;
-  height: 32px;
+    width: 30px;
+    height: 30px;
+
+    padding: 6px;
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
 }
 
-/* ================== HERO/SLIDER ================== */
+.social-links .icon:hover {
+    transform: translateY(-3px);
+    background: var(--rosa);
+}
+
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: var(--rosa-claro);
+
+    border-radius: 50%;
+
+    color: var(--chocolate);
+
+    cursor: pointer;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 500px;
-  gap: 30px;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 10px;
-  align-items: start;
-  position: relative;
+    width: min(1400px, 90%);
 
+    min-height: 650px;
+
+    margin: 0 auto;
+
+    padding: 75px 0;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(400px, 560px);
+
+    gap: 70px;
+
+    align-items: center;
 }
+
+
+/* =========================
+   HERO TEXT
+========================= */
 
 .banner-bienvenida {
-  max-width: 600px;
-  text-align: left;
+    max-width: 650px;
+
+    text-align: left;
 }
 
+.banner-bienvenida::before {
+    content: "HECHO CON AMOR";
+
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    padding: 7px 14px;
+
+    background: var(--rosa);
+
+    color: var(--chocolate);
+
+    border-radius: 30px;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.banner-bienvenida h1 {
+    margin-bottom: 25px;
+}
+
+.banner-bienvenida p {
+    max-width: 560px;
+
+    font-size: 1.08rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   SLIDER
+========================= */
+
 .slider-wrapper {
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+    width: 100%;
+
+    padding: 10px;
+
+    background: var(--blanco);
+
+    border-radius: 24px;
+
+    box-shadow: var(--sombra);
+
+    border: 1px solid rgba(75, 48, 39, 0.06);
+
+    overflow: hidden;
 }
 
 #mainSlider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 }
 
 #mainSlider img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 15px;
-  transition: transform 0.5s ease;
+    width: 100%;
+    height: 520px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    transition: transform 0.5s ease;
 }
 
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .banner-bienvenida {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .slider-wrapper {
-    max-width: 100%;
-    margin: 0 auto;
-  }
+.slider-wrapper:hover #mainSlider img {
+    transform: scale(1.015);
 }
 
-/* ================== SECCIONES ================== */
+
+/* =========================================================
+   SECCIÓN POSTRES
+========================================================= */
+
 .postres {
-  position: relative;
-  background-color: #ffe2f5;
-  padding: 4rem 2rem;
+    position: relative;
+
+    padding: 100px 5% 120px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--rosa) 0%,
+            var(--rosa-claro) 100%
+        );
 }
+
+
+/* =========================
+   TÍTULO
+========================= */
 
 .postres h2 {
-  margin-bottom: 3rem;
+    text-align: center;
+
+    margin-bottom: 15px;
 }
+
+.postres h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    margin: 18px auto 55px;
+
+    background: var(--dorado);
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
 
 .postres-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: center;
-  max-width: 1800px;
-  margin: 0 auto;
+    width: min(1400px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 28px;
 }
 
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
 .postre {
-  background-color: rgb(255, 243, 252);
-  text-align: center;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  width: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+
+    background: var(--blanco);
+
+    border-radius: var(--radio);
+
+    overflow: hidden;
+
+    padding: 0;
+
+    width: auto;
+
+    text-align: left;
+
+    box-shadow: var(--sombra);
+
+    border: 1px solid rgba(75, 48, 39, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .postre:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+
+    box-shadow: var(--sombra-hover);
 }
+
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
 
 .postre img {
-  width: 100%;
-  height: 18rem;
-  object-fit: cover;
-  margin-bottom: 1.2rem;
-  border-radius: 0.8rem;
+    width: 100%;
+    height: 270px;
+
+    object-fit: cover;
+
+    margin: 0;
+
+    border-radius: 0;
+
+    transition: transform 0.45s ease;
 }
 
+.postre:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   PRODUCT CONTENT
+========================= */
+
 .postre h3 {
-  font-size: 26px;
-  margin-bottom: 0.6rem;
+    margin: 22px 22px 8px;
+
+    font-size: 1.35rem;
 }
 
 .postre p {
-  margin-bottom: 0.8rem;
+    margin: 0 22px 15px;
+
+    font-size: 0.94rem;
+
+    line-height: 1.6;
 }
 
 .disponibilidad {
-  color: #020202;
-  font-weight: 600;
-  margin-top: 0.5rem;
+    display: inline-block;
+
+    margin: 0 22px 22px;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: #edf8ef;
+
+    color: #3c7548 !important;
+
+    font-size: 0.78rem !important;
+
+    font-weight: 600;
 }
 
-/* ================== OLAS ENTRE SECCIONES ================== */
+
+/* =========================================================
+   OLA
+========================================================= */
+
 .section-wave {
-  display: block;
-  width: 100%;
-  height: 200px;
-  margin-top: -165px; /* sube la ola para que se mezcle mejor con la sección */
-  line-height: 0;
+    display: block;
+
+    width: 100%;
+
+    height: 120px;
+
+    margin-top: -70px;
+
+    position: relative;
+
+    z-index: 2;
 }
 
-/* ================== CONTACTO ================== */
+
+/* =========================================================
+   CONTACTO
+========================================================= */
+
 .contacto {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  background-color: #ffe2f5;
-  border-radius: 15px;
+    width: min(1200px, 90%);
+
+    margin: 60px auto;
+
+    padding: 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    background: var(--blanco);
+
+    border-radius: 25px;
+
+    box-shadow: var(--sombra);
+
+    border: 1px solid rgba(75, 48, 39, 0.06);
 }
 
 .contacto .info h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    margin-bottom: 18px;
+}
+
+.contacto .info p {
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+.contacto .imagen-contacto {
+    display: flex;
+
+    justify-content: center;
 }
 
 .contacto .imagen-contacto img {
-  max-width: 300px;
-  width: 100%;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 380px;
+
+    border-radius: 20px;
+
+    box-shadow: var(--sombra);
 }
 
-/* ================== CTA FINAL ================== */
+
+/* =========================================================
+   CTA
+========================================================= */
+
 .cta-final {
-  background: #ffeafb;
-  text-align: center;
-  padding: 4rem 2rem;
-  box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.1);
-  border-top: 1px solid rgba(92, 64, 51, 0.2);
+    padding: 100px 5%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff2f7,
+            #fce1eb
+        );
+
+    border-top: 1px solid rgba(75, 48, 39, 0.07);
 }
 
 .cta-final h2 {
-  font-size: 44px;
-  font-weight: 600;
-  color: #5C4033;
-  margin-bottom: 1rem;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+
+    margin-bottom: 18px;
 }
 
 .cta-final p {
-  font-size: 20px;
-  color: #5C4033;
-  margin-bottom: 2.5rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
 }
 
+
+/* =========================
+   CTA BUTTON
+========================= */
+
 .cta-button {
-  display: inline-block;  /* 👈 clave para que el scale se note */
-  position: relative;     /* 👈 lo mantenemos para controlar stacking */
-  background-color: rgb(245, 242, 209);
-  color: #5C4033;
-  padding: 14px 36px;
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 20px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-  z-index: 2; /* 👈 asegúrate de que quede encima de la ola */
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 32px;
+
+    background: var(--chocolate);
+
+    color: var(--blanco);
+
+    border-radius: 30px;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+
+    box-shadow: 0 8px 25px rgba(75, 48, 39, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .cta-button:hover {
-  background-color: #5C4033;
-  color: rgb(245, 242, 209);
-  transform: scale(1.1);
+    background: var(--dorado);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(75, 48, 39, 0.2);
 }
 
 
-/* ================== FOOTER ================== */
+/* =========================================================
+   FOOTER
+========================================================= */
+
 footer {
-  text-align: center;
-  padding: 3rem 2rem;
-  background-color: #49342a;
-  color: rgb(245, 242, 209);
-  border-top: 2px solid #5f4c25;
+    padding: 70px 5% 25px;
+
+    background: var(--chocolate);
+
+    color: var(--blanco);
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 3rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+    width: min(1300px, 100%);
+
+    margin: 0 auto 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 45px;
 }
 
 .footer-section {
-  max-width: 300px;
-  text-align: left;
+    max-width: 300px;
+
+    text-align: left;
 }
 
 .footer-section h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-  color: rgb(245, 242, 209);
-  border-left: 4px solid #FFD580;
-  padding-left: 8px;
+    margin-bottom: 18px;
+
+    color: var(--blanco);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+.footer-section h3::after {
+    content: "";
+
+    display: block;
+
+    width: 30px;
+    height: 2px;
+
+    margin-top: 8px;
+
+    background: var(--dorado);
 }
 
 .footer-section p,
 .footer-section a {
-  font-size: 18px;
-  color: rgb(245, 242, 209);
-  text-decoration: none;
-  line-height: 1.6;
-  transition: color 0.3s ease;
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+.footer-section a {
+    display: block;
+
+    margin-bottom: 5px;
+
+    transition: color 0.2s ease;
 }
 
 .footer-section a:hover {
-  color: #FFD580;
+    color: var(--dorado-claro);
 }
 
 .copy {
-  font-size: 0.9rem;
-  margin-top: 1rem;
-  color: rgb(245, 242, 209);
-  border-top: 1px solid rgba(92, 64, 51, 0.822);
-  padding-top: 1rem;
+    width: min(1300px, 100%);
+
+    margin: 0 auto;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 0.8rem;
 }
 
-.imagen-contacto img {
-  max-width: 200px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    nav {
+        padding: 0 4%;
+    }
+
+    .nav-right {
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 2px;
+    }
+
+    .nav-links a {
+        padding: 8px 10px;
+
+        font-size: 0.88rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr 430px;
+
+        gap: 40px;
+
+        min-height: 570px;
+    }
+
+    #mainSlider img {
+        height: 430px;
+    }
+
+    .contacto {
+        padding: 50px;
+    }
 }
 
 
-/* ================== RESPONSIVE GLOBAL (mejoras) ================== */
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
 
-/* Breakpoints usados:
-   - 1200px: ajustar nav horizontal (compacto)
-   - 992px: nav cambia a hamburguesa si hace falta
-   - 900px: hero -> columna, slider más pequeño
-   - 768px: mobile layout definitivo
-   - 480px: ajustes muy pequeños (teléfonos) 
-*/
+@media (max-width: 850px) {
 
-@media (max-width: 1200px) {
-  .nav-links a {
-    font-size: 0.85rem;
-    padding: 8px 12px;
-  }
+    nav {
+        min-height: 72px;
 
-  .logo img {
-    width: 3rem;
-    height: 3rem;
-  }
+        padding: 0 20px;
+    }
 
-  .logo-text {
-    font-size: 16px;
-  }
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-right {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: rgba(255, 255, 255, 0.98);
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        border-bottom:
+            1px solid rgba(75, 48, 39, 0.08);
+
+        box-shadow:
+            0 15px 30px rgba(75, 48, 39, 0.1);
+
+        backdrop-filter: blur(12px);
+    }
+
+    .nav-right.active {
+        display: flex;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 13px;
+
+        text-align: center;
+
+        font-size: 1rem;
+    }
+
+    .social-links {
+        justify-content: center;
+
+        padding-top: 8px;
+    }
+
+    .hero {
+        width: 90%;
+
+        padding: 55px 0;
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        text-align: center;
+    }
+
+    .banner-bienvenida {
+        max-width: 700px;
+
+        margin: auto;
+
+        text-align: center;
+    }
+
+    .banner-bienvenida p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .slider-wrapper {
+        width: 100%;
+    }
+
+    #mainSlider img {
+        height: 430px;
+    }
+
+    .postres {
+        padding: 75px 5% 90px;
+    }
+
+    .postres-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .postre img {
+        height: 230px;
+    }
+
+    .postre h3 {
+        margin: 17px 17px 7px;
+
+        font-size: 1.15rem;
+    }
+
+    .postre p {
+        margin: 0 17px 12px;
+
+        font-size: 0.86rem;
+    }
+
+    .disponibilidad {
+        margin: 0 17px 17px;
+    }
+
+    .contacto {
+        width: 90%;
+
+        padding: 45px 30px;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        text-align: center;
+    }
+
+    .contacto .imagen-contacto {
+        order: -1;
+    }
+
+    .contacto .imagen-contacto img {
+        max-width: 300px;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-section {
+        max-width: none;
+
+        text-align: center;
+    }
+
+    .footer-section h3::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
 
-  .nav-right {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-    border-radius: 0 0 15px 15px;
-    width: 100%;
-    align-items: center;
-    display: none;
-  }
+/* =========================================================
+   CELULARES
+========================================================= */
 
-  .nav-right.active {
-    display: flex;
-  }
+@media (max-width: 600px) {
 
-  .nav-links {
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    align-items: center;
-  }
+    body {
+        font-size: 15px;
+    }
 
-  .nav-links a {
-    font-size: 1.3rem;
-    padding: 10px 20px;
-  }
+    nav {
+        padding: 0 15px;
+    }
 
-  .social-links {
-    justify-content: center;
-    gap: 1.5rem;
-  }
+    .logo {
+        gap: 8px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 0.92rem;
+    }
+
+    .hero {
+        width: 92%;
+
+        padding: 40px 0 55px;
+
+        gap: 30px;
+    }
+
+    .banner-bienvenida::before {
+        font-size: 0.65rem;
+
+        padding: 6px 11px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner-bienvenida p {
+        font-size: 0.95rem;
+
+        line-height: 1.7;
+    }
+
+    #mainSlider img {
+        height: 330px;
+
+        border-radius: 15px;
+    }
+
+    .slider-wrapper {
+        padding: 7px;
+
+        border-radius: 18px;
+    }
+
+    .postres {
+        padding: 60px 15px 75px;
+    }
+
+    .postres h2 {
+        font-size: 2.2rem;
+    }
+
+    .postres h2::after {
+        margin-bottom: 35px;
+    }
+
+    .postres-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+    .postre {
+        border-radius: 14px;
+    }
+
+    .postre img {
+        height: 165px;
+    }
+
+    .postre h3 {
+        margin: 13px 12px 5px;
+
+        font-size: 1rem;
+    }
+
+    .postre p {
+        margin: 0 12px 10px;
+
+        font-size: 0.78rem;
+
+        line-height: 1.45;
+    }
+
+    .disponibilidad {
+        margin: 0 12px 13px;
+
+        padding: 5px 9px;
+
+        font-size: 0.67rem !important;
+    }
+
+    .contacto {
+        margin: 35px auto;
+
+        padding: 40px 20px;
+
+        border-radius: 20px;
+    }
+
+    .contacto .info h2 {
+        font-size: 2rem;
+    }
+
+    .contacto .info p {
+        font-size: 0.9rem;
+    }
+
+    .cta-final {
+        padding: 70px 20px;
+    }
+
+    .cta-final h2 {
+        font-size: 2.1rem;
+    }
+
+    .cta-final p {
+        font-size: 0.9rem;
+
+        margin-bottom: 28px;
+    }
+
+    .cta-button {
+        width: 100%;
+
+        max-width: 300px;
+
+        min-height: 50px;
+    }
+
+    footer {
+        padding: 55px 20px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        margin-bottom: 35px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .logo-text {
+        font-size: 0.82rem;
+    }
+
+    .hero {
+        padding-top: 30px;
+    }
+
+    h1 {
+        font-size: 2.15rem;
+    }
+
+    .postres-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .postre img {
+        height: 220px;
+    }
+
+    .postre h3 {
+        font-size: 1.2rem;
+    }
+
+    .postre p {
+        font-size: 0.86rem;
+    }
+
+    #mainSlider img {
+        height: 280px;
+    }
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
 }
